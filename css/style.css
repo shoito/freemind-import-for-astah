@@ -1,0 +1,214 @@
+html {
+	background: #fafafa;
+}
+
+body {
+	font-family: 'Lucida Grande', 'Segoe UI', 'Ubuntu', sans-serif;
+	text-align: center;
+	width: 968px;
+	margin: 0 auto;
+	padding: 0;
+	text-shadow: 0 1px 0 white;
+	position: relative;
+	color: #111;
+}
+
+h1 {
+	font-family: 'Myriad Pro', 'Lucida Grande', 'Segoe UI', 'Ubuntu', sans-serif;
+	font-size: 106px;
+	margin: 90px 0 0 100px;
+	padding: 0;
+	line-height: 0.8em;
+}
+
+h1.fit {
+	font-size: 150px;
+}
+
+h2 {
+	margin: 0 100px 0 100px;
+	padding: 0;
+}
+
+h2.top {
+	margin-top: 75px;
+}
+
+h2.left {
+	margin-left: 0;
+}
+
+.description {
+	margin: 0 0 0 100px;
+	width: 500px;
+}
+
+.description.wide {
+	width: 800px;
+}
+
+a {
+	color: #12c;
+}
+
+p.center {
+	text-align: center;
+}
+
+/* Gallery styles */
+#gallery { /* CSS3 Rounded Corners */
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	/* The width of the gallery */
+	width: 968px;
+	overflow: hidden;
+}
+
+#slides { /* This is the slide area */
+	height: 1500px;
+	/* jQuery changes the width later on to the sum of the widths of all the slides. */
+	width: 968px;
+	overflow: hidden;
+}
+
+#wrapper {
+	background: white;
+	border-radius: 5px;
+}
+
+.slide {
+	float: left;
+	min-height: 600px;
+	width: 968px;
+	text-align: left;
+	position: relative;
+}
+
+ul.menu {
+	margin: 20px 0 20px;
+	padding: 0;
+	background: #ddd;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 -30px 20px -10px
+		rgba(0, 0, 0, 0.1) inset;
+	border-radius: 3px;
+}
+
+ul.menu li { /* Every thumbnail is a li element */
+	width: 120px;
+	display: inline-block;
+	list-style: none;
+	overflow: hidden;
+	padding: 8px;
+	margin: 0;
+}
+
+ul.menu li.inact:hover {
+	
+}
+
+ul.menu li.act,li.act:hover {
+	background: rgba(0, 0, 0, 0.35);
+	color: #eee;
+	text-shadow: 0 1px 1px black;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+}
+
+ul.menu li.act a {
+	cursor: default;
+}
+
+li a {
+	display: block;
+	text-decoration: none;
+	padding: 4px;
+	color: inherit;
+}
+
+a img {
+	border: none;
+}
+
+.initial {
+	background: url('../images/initial.png') right 220px no-repeat;
+}
+
+.highlight {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #e11;
+	border-radius: 100px;
+	border: 5px solid white;
+	box-shadow: 0 0 2px 2px rgba(240, 18, 18, 0.5);
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.highlight:hover {
+	overflow: visible;
+	opacity: 1 !important;
+	z-index: 1;
+}
+
+.highlight .highlight-content {
+	position: absolute;
+	left: -25px;
+	top: 10px;
+	padding: 8px;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 4px;
+	opacity: 0;
+	color: white;
+	text-shadow: 0 1px black;
+	min-width: 250px;
+	font-size: 90%;
+}
+
+.highlight .highlight-content.right {
+	left: -200px;
+}
+
+.highlight:hover .highlight-content {
+	opacity: 1;
+	-webkit-transition: 1s ease opacity;
+	-moz-transition: 1s ease opacity;
+	-ms-transition: 1s ease opacity;
+	-o-transition: 1s ease opacity;
+	transition: 1s ease opacity;
+}
+
+.description li {
+	margin: 10px 0
+}
+
+#vote {
+	position: absolute;
+	right: 0;
+	top: 10px;
+	margin-right: 10px;
+}
+
+.social {
+	float: left;
+}
+
+.social div {
+	display: inline;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	zoom: 1;
+}

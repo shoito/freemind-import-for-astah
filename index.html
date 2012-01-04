@@ -1,97 +1,160 @@
 <!DOCTYPE html>
+<!-- Fork from http://coreh.github.com/nide/ -->
 <html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>shoito/freemind-import-for-astah @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #3c8c69;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #c37396; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #c37396; }
-    h3 { text-align: center; color: #c37396; }
-    a { color: #c37396; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<meta charset="utf-8">
+	<title>FreeMind Import for astah</title>
+	<link rel="stylesheet" href="css/colorbox.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.socialbutton-1.8.1.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+	$(function() {
+		setInterval(function() {
+			$('.highlight').animate({
+				opacity : 0.5
+			}, 1000).animate({
+				opacity : 1
+			}, 1000)
+		}, 2000);
+	    
+	    $('.google_plus').socialbutton('google_plusone', {
+	    	lang: 'ja',
+	    	size: 'tall'
+	    });
+	    
+	    $('.hatena').socialbutton('hatena', {
+	    	button: 'vertical'
+	    });
+	    
+	    $('.twitter').socialbutton('twitter', {
+	    	button: 'vertical',
+	    	via: 'shoito',
+	    	url: 'http://shoito.github.com/freemind-import-for-astah/'
+	    });
+	    
+	    $('.facebook_like').socialbutton('facebook_like', {
+	    	button: 'box_count'
+	    });
+	    
+	    $(".lightbox").colorbox({rel:'lightbox', transition:"fade"});
+	});
+	</script>
 </head>
-
 <body>
-  <a href="https://github.com/shoito/freemind-import-for-astah"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/shoito/freemind-import-for-astah/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/shoito/freemind-import-for-astah/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+  <a href="http://github.com/shoito/freemind-import-for-astah"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+  <div id="gallery">
+    <div id="menu">
+	<ul class="menu">
+		<li class="menuItem"><a href="#about">About</a></li>
+		<li class="menuItem"><a href="#screenshots">Screenshots</a></li>
+		<li class="menuItem"><a href="#features">Features</a></li>
+    </ul>
+	</div>
+	<div id="wrapper">
+    <div id="slides">
+    <div class="slide initial">
+		<h1>FreeMind x Astah</h1>
+		<h2>FreeMind Import for astah</h2>
+		<div class="description">
+			<p>ソフトウェア設計支援ツール <a href="http://astah.change-vision.com/" target="_blank">astah(旧JUDE)</a> に、<a href="http://freemind.sourceforge.net/" target="_blank">FreeMind</a>ファイル(.mm)をインポートするastahプラグインです。</p>
+		 	<p><a href="http://astah.change-vision.com/astah-uml.var" target="_blank">astah UML</a>, <a href="http://astah.change-vision.com/astah-professional.var" target="_blank">professional</a>の何れかにインストールして利用します。なお、プラグインはastahのバージョン6.5.1以上で動作します。</p>
+		</div>
+		<h2>Demo</h2>
+		<div class="description wide">
+			<p>
+				<object style="height: 293px; width: 480px"><param name="movie" value="http://www.youtube.com/v/242DjV5Q35k?version=3&amp;feature=player_embedded"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/242DjV5Q35k?version=3&amp;feature=player_embedded" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="480" height="293"></object>
+			</p>
+		</div>
+		<br>
+		<br>
+		<h2>Try it out!</h2>
+		<div class="description">
+			<p>FreeMind Import for astahは、astahにインストールするプラグインとしてデザインされています。</p>
+			<ol>
+				<li>各OS用のastahインストーラーをダウンロードして、astahをインストールします。<br>
+					<a href="http://astah.change-vision.com/ja/product/astah-uml.html" target="_blank">http://astah.change-vision.com/ja/product/astah-uml.html</a>
+				</li>
+				<li>
+					<div><a href="https://github.com/shoito/freemind-import-for-astah/downloads" target="_blank">mm2asta-x.x.x.jar</a>を astahインストールフォルダ/plugins に配置してください。アンインストールしたい場合は.jarファイルを削除します。
+						<p>Mac OS X</p>
+						<pre>/Applications/astah community/plugins</pre>
+						<p>Windows</p>
+						<pre>C:¥Program Files¥astah-community¥plugins</pre>
+					</div>
+				</li>
+			</ol>
+		</div>
+		<h2>Best Tools</h2>
+		<div class="description">
+			<a href="http://freemind.sourceforge.net/" target="_blank"><img alt="FreeMind" src="images/freemind.png"/></a><a href="http://astah.change-vision.com" target="_blank"><img alt="astah" src="images/astah.png"/></a>
+		</div>
+		<br>
+		<div class="description social clearfix">
+			<div class="google_plus"></div>
+			<div class="hatena"></div>
+			<div class="twitter"></div>
+			<div class="facebook_like"></div>
+		</div>
+	</div>
+    <div class="slide">
+		<a class="lightbox" href="images/ss0.png"><img src="images/ss0.png" class="fade" alt="Import FreeMind" width="560" height="405" /></a>
+		<a class="lightbox" href="images/freemind_ss.png"><img src="images/freemind_ss.png" class="fade" alt="FreeMind View" width="600" height="485" /></a>
+		<a class="lightbox" href="images/astah_ss.png"><img src="images/astah_ss.png" class="fade" alt="astah View" width="600" height="492" /></a>
+		<div class="description social clearfix">
+			<div class="google_plus"></div>
+			<div class="hatena"></div>
+			<div class="twitter"></div>
+			<div class="facebook_like"></div>
+		</div>
+	</div>
+    <div class="slide">
+		<h2 class="top">Features</h2>
+    	<div class="description wide">
+			<ul>
+				<li>FreeMind(.mm)ファイルをastahに読み込める。</li>
+				<li>複数のFreeMind(.mm)ファイルを一括でastahのマインドマップに変換できる。</li>
+				<li>複数のマインドマップを一つのファイルで管理できる(astahの機能)。</li>
+			</ul>
+	    </div>
+		<h2>Limitations</h2>
+    	<div class="description wide">
+			<ul>
+				<li>ノート/色/ユーザー定義アイコン/HTML/etcがインポートできない。</li>
+			</ul>
+	    </div>
+	    <br>
+	    <h2>Source Code</h2>
+	    <div class="description wide">
+	    	<p><a href="https://github.com/shoito/freemind-import-for-astah">https://github.com/shoito/freemind-import-for-astah</a></p>
+	    </div>
+	    <br>
+		<h2>License</h2>
+		<div class="description wide">
+			<p>Licensed under the Apache License, Version 2.0</p>
+		</div>
+		<div class="description social clearfix">
+			<div class="google_plus"></div>
+			<div class="hatena"></div>
+			<div class="twitter"></div>
+			<div class="facebook_like"></div>
+		</div>
     </div>
+	</div>
+	</div>
+	</div>
 
-    <h1><a href="https://github.com/shoito/freemind-import-for-astah">freemind-import-for-astah</a>
-      <span class="small">by <a href="https://github.com/shoito">shoito</a></span></h1>
-
-    <div class="description">
-      FreeMind Import for astah Plugin
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>shoito<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>@shoito</p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/shoito/freemind-import-for-astah/zipball/master">zip</a> or
-      <a href="https://github.com/shoito/freemind-import-for-astah/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/shoito/freemind-import-for-astah</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/shoito/freemind-import-for-astah">shoito/freemind-import-for-astah</a>
-    </div>
-
-  </div>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-677679-12");
-pageTracker._trackPageview();
-} catch(err) {}</script>"
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-677679-12");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
 </body>
 </html>
