@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.apache.commons.lang.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,7 @@ public class ConfigurationUtils {
 	private static final Logger logger = LoggerFactory.getLogger(ConfigurationUtils.class);
 
 	public static final String CURRENT_DIRECTORY = "currentDirectory";
+	public static final String UPDATE_CHECK = "updateCheck";
 	
 	public static String EDITION;
 	public static File CONFIG_FILE;
@@ -41,6 +43,8 @@ public class ConfigurationUtils {
 			config = new Properties();
 			config.load(new FileInputStream(CONFIG_FILE));
 			if (!config.isEmpty()) {
+				String updateCheck = config.getProperty(UPDATE_CHECK);
+				options.put(UPDATE_CHECK, (String) ObjectUtils.defaultIfNull(updateCheck, "true"));
 				setOptionFromConfig(options, CURRENT_DIRECTORY, config);
 			}
 		} catch (Exception e) {

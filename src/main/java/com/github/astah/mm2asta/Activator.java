@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 
 import javax.xml.bind.JAXB;
 
@@ -17,7 +18,9 @@ import org.slf4j.LoggerFactory;
 import ch.qos.logback.classic.Logger;
 
 import com.change_vision.jude.api.inf.ui.IMessageDialogHandlerFactory;
+import com.github.astah.mm2asta.updater.AutoUpdater;
 import com.github.astah.mm2asta.usericon.MmUserIcon;
+import com.github.astah.mm2asta.util.ConfigurationUtils;
 
 public class Activator implements BundleActivator {
 	private static final Logger logger = (Logger) LoggerFactory.getLogger(Activator.class);
@@ -46,6 +49,16 @@ public class Activator implements BundleActivator {
 			logger.error("Initialization error: " + MmUserIcon.FILE_NAME);
 			return;
 		}
+		
+		Map<String, String> config = ConfigurationUtils.load();
+		String updateCheckStr = config.get(ConfigurationUtils.UPDATE_CHECK);
+		logger.info("Are there newer versions available? " + updateCheckStr);
+		
+		if ("false".equalsIgnoreCase(updateCheckStr)) {
+			return;
+		}
+		
+		runAutoUpdater();
 	}
 
 	public void stop(BundleContext context) {
@@ -64,5 +77,25 @@ public class Activator implements BundleActivator {
 			mmUserIcon.merge(mmUserIconForPlugin);
 			JAXB.marshal(mmUserIcon, new FileWriter(userIconXmlFile));
 		}
+	}
+	
+	private void runAutoUpdater() {
+		new Runnable() {
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(320000);
+				} catch (InterruptedException e) {
+					logger.warn(e.getMessage(), e);
+				}
+				
+				AutoUpdater autoUpdater = new AutoUpdater();
+				try {
+					autoUpdater.check();
+				} catch (IOException e) {
+					logger.warn(e.getMessage(), e);
+				}
+			}
+		};
 	}
 }
