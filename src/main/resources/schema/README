@@ -1,0 +1,1 @@
+xjc src/main/resources/schema/freemind.xsd -p com.github.astah.mm2asta.model -d src/main/java

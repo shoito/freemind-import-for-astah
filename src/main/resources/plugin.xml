@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension point="com.change_vision.astah.ui.actionSets">
+      <actionSet
+            label="%import_label"
+            visible="true"
+            id="com.github.astah.mm2asta.actionSet">
+         <action
+			   label="%import_label"
+               class="com.github.astah.mm2asta.action.ImportAction"
+               tooltip="%import_label"
+               menubarPath="tool/mindmap/"
+               id="com.github.astah.mm2asta.action.ImportAction">
+         </action>
+     </actionSet>
+   </extension>
+</plugin>

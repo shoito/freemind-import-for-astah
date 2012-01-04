@@ -1,0 +1,6 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+Bundle-Activator: ${bundle.namespace}.Activator
+Import-Package: !org.codehaus.janino,!sun.*,!javax.jms.*,!javax.servlet.*,!org.apache.*,!javax.mail.*,*;resolution:=optional
