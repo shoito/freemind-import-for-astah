@@ -7,20 +7,12 @@
 	<title>FreeMind Import for astah</title>
 	<link rel="stylesheet" href="css/colorbox.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery.socialbutton-1.8.1.js"></script>
 	<script type="text/javascript" src="js/lib/jquery.colorbox-min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script>
 	$(function() {
-		setInterval(function() {
-			$('.highlight').animate({
-				opacity : 0.5
-			}, 1000).animate({
-				opacity : 1
-			}, 1000)
-		}, 2000);
-	    
 	    $('.google_plus').socialbutton('google_plusone', {
 	    	lang: 'ja',
 	    	size: 'tall'
@@ -40,7 +32,7 @@
 	    	button: 'box_count'
 	    });
 	    
-	    $(".lightbox").colorbox({rel:'lightbox', transition:"fade"});
+	    $('.lightbox').colorbox({rel:'lightbox', transition:'fade', fixed:true});
 	});
 	</script>
 </head>
@@ -59,27 +51,28 @@
     <div class="slide initial">
 		<h1>FreeMind x Astah</h1>
 		<h2>FreeMind Import for astah</h2>
-		<div class="description">
-			<p>ソフトウェア設計支援ツール <a href="http://astah.change-vision.com/" target="_blank">astah(旧JUDE)</a> に、<a href="http://freemind.sourceforge.net/" target="_blank">FreeMind</a>ファイル(.mm)をインポートするastahプラグインです。</p>
-		 	<p><a href="http://astah.change-vision.com/astah-uml.var" target="_blank">astah UML</a>, <a href="http://astah.change-vision.com/astah-professional.var" target="_blank">professional</a>の何れかにインストールして利用します。なお、プラグインはastahのバージョン6.5.1以上で動作します。</p>
+		<div class="description wide">
+			<p>ソフトウェア設計支援ツール <a href="http://astah.change-vision.com/" target="_blank">astah(旧JUDE)</a> に、マインドマップ作成ツール <a href="http://freemind.sourceforge.net/" target="_blank">FreeMind</a> のファイル(.mm)をインポートするastahプラグインです。<a href="http://astah.change-vision.com/astah-uml.var" target="_blank">astah UML</a>, <a href="http://astah.change-vision.com/astah-professional.var" target="_blank">professional</a>の何れかにインストールして利用します。
 		</div>
 		<h2>Demo</h2>
 		<div class="description wide">
 			<p>
 				<object style="height: 293px; width: 480px"><param name="movie" value="http://www.youtube.com/v/242DjV5Q35k?version=3&amp;feature=player_embedded"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/242DjV5Q35k?version=3&amp;feature=player_embedded" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="480" height="293"></object>
 			</p>
+			<small>※このプラグインはastahのバージョン6.5.1以上で動作します。<br/>
+			※マインドマップを利用するため、astah communityでは利用できません。</small>
 		</div>
-		<br>
-		<br>
+		<br/>
 		<h2>Try it out!</h2>
 		<div class="description">
 			<p>FreeMind Import for astahは、astahにインストールするプラグインとしてデザインされています。</p>
 			<ol>
-				<li>各OS用のastahインストーラーをダウンロードして、astahをインストールします。<br>
+				<li>各OS用のastahインストーラーをダウンロードして、astahをインストールします。<br/>
 					<a href="http://astah.change-vision.com/ja/product/astah-uml.html" target="_blank">http://astah.change-vision.com/ja/product/astah-uml.html</a>
 				</li>
 				<li>
-					<div><a href="https://github.com/shoito/freemind-import-for-astah/downloads" target="_blank">mm2asta-x.x.x.jar</a>を astahインストールフォルダ/plugins に配置してください。アンインストールしたい場合は.jarファイルを削除します。
+					<div>
+						<p><a href="https://github.com/shoito/freemind-import-for-astah/downloads" target="_blank">mm2asta-x.x.x.jar</a>を astahインストールフォルダ/plugins に配置してください。アンインストールしたい場合は.jarファイルを削除してください。</p>
 						<p>Mac OS X</p>
 						<pre>/Applications/astah UML/plugins</pre>
 						<p>Windows</p>
@@ -90,10 +83,11 @@
 		</div>
 		<h2>Best Tools</h2>
 		<div class="description">
-			<a href="http://freemind.sourceforge.net/" target="_blank"><img alt="FreeMind" src="images/freemind.png"/></a><a href="http://astah.change-vision.com" target="_blank"><img alt="astah" src="images/astah.png"/></a>
+			<a href="http://freemind.sourceforge.net/" target="_blank"><img alt="FreeMind" src="images/freemind.png"/></a>
+			<a href="http://astah.change-vision.com" target="_blank"><img alt="astah" src="images/astah.png"/></a>
 		</div>
 		<br>
-		<div class="description social clearfix">
+		<div class="description social initial clearfix">
 			<div class="google_plus"></div>
 			<div class="hatena"></div>
 			<div class="twitter"></div>

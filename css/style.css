@@ -16,7 +16,7 @@ body {
 h1 {
 	font-family: 'Myriad Pro', 'Lucida Grande', 'Segoe UI', 'Ubuntu', sans-serif;
 	font-size: 92px;
-	margin: 90px 0 0 100px;
+	margin: 80px 0 0 100px;
 	padding: 0;
 	line-height: 0.8em;
 }
@@ -40,7 +40,7 @@ h2.left {
 
 .description {
 	margin: 0 0 0 100px;
-	width: 500px;
+	width: 540px;
 }
 
 .description.wide {
@@ -121,7 +121,7 @@ ul.menu li.act a {
 	cursor: default;
 }
 
-li a {
+li.menuItem a {
 	display: block;
 	text-decoration: none;
 	padding: 4px;
@@ -133,63 +133,11 @@ a img {
 }
 
 .initial {
-	background: url('../images/initial.png') right 220px no-repeat;
-}
-
-.highlight {
-	position: absolute;
-	width: 10px;
-	height: 10px;
-	background: #e11;
-	border-radius: 100px;
-	border: 5px solid white;
-	box-shadow: 0 0 2px 2px rgba(240, 18, 18, 0.5);
-	overflow: hidden;
-	cursor: pointer;
-}
-
-.highlight:hover {
-	overflow: visible;
-	opacity: 1 !important;
-	z-index: 1;
-}
-
-.highlight .highlight-content {
-	position: absolute;
-	left: -25px;
-	top: 10px;
-	padding: 8px;
-	background: rgba(0, 0, 0, 0.8);
-	border-radius: 4px;
-	opacity: 0;
-	color: white;
-	text-shadow: 0 1px black;
-	min-width: 250px;
-	font-size: 90%;
-}
-
-.highlight .highlight-content.right {
-	left: -200px;
-}
-
-.highlight:hover .highlight-content {
-	opacity: 1;
-	-webkit-transition: 1s ease opacity;
-	-moz-transition: 1s ease opacity;
-	-ms-transition: 1s ease opacity;
-	-o-transition: 1s ease opacity;
-	transition: 1s ease opacity;
+	background: url('../images/initial.png') right 270px no-repeat;
 }
 
 .description li {
 	margin: 10px 0
-}
-
-#vote {
-	position: absolute;
-	right: 0;
-	top: 10px;
-	margin-right: 10px;
 }
 
 .social {
