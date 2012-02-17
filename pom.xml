@@ -8,11 +8,11 @@
 	</properties>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.astah</groupId>
-	<version>0.0.3</version>
+	<version>0.1.0</version>
 	<artifactId>mm2asta</artifactId>
 	<packaging>bundle</packaging>
-	<name>FreeMind Import for Astah</name>
-	<description>Freemindフォーマットのファイルをインポートするastahプラグ­イン</description>
+	<name>%bundle.name</name>
+	<description>%bundle.description</description>
 	<profiles>
 		<profile>
 			<id>build</id>
