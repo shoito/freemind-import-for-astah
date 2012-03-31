@@ -24,9 +24,7 @@ public class AstahAPIHandler {
 	}
 	
 	public IDiagramViewManager getDiagramViewManager() {
-		IViewManager viewManager = getViewManager();
-	    IDiagramViewManager diagramViewManager = viewManager.getDiagramViewManager();
-		return diagramViewManager;
+		return getViewManager().getDiagramViewManager();
 	}
 
 	public MindmapEditor getMindmapEditor() {
@@ -45,7 +43,7 @@ public class AstahAPIHandler {
 		}
 	}
 
-	public ProjectAccessor getProjectAccessor() {
+	private ProjectAccessor getProjectAccessor() {
 		ProjectAccessor projectAccessor = null;
 		try {
 			projectAccessor = ProjectAccessorFactory.getProjectAccessor();
@@ -57,26 +55,25 @@ public class AstahAPIHandler {
 	}
 
 	public JFrame getMainFrame() {
-		return getProjectAccessor().getViewManager().getMainFrame();
+		return getViewManager().getMainFrame();
 	}
 
 	private IViewManager getViewManager() {
-		ProjectAccessor projectAccessor = getProjectAccessor();
-		IViewManager viewManager = projectAccessor.getViewManager();
-		if(viewManager == null) throw new IllegalStateException("ViewManager must not be null.");
-		return viewManager;
+		try {
+			return getProjectAccessor().getViewManager();
+		} catch (InvalidUsingException e) {
+			throw new IllegalStateException("viewManager must not be null.");
+		}
 	}
 
 	private IModelEditorFactory getModelEditorFactory() {
-		ProjectAccessor projectAccessor = getProjectAccessor();
-		IModelEditorFactory modelEditorFactory = projectAccessor.getModelEditorFactory();
+		IModelEditorFactory modelEditorFactory = getProjectAccessor().getModelEditorFactory();
 		if(modelEditorFactory == null) throw new IllegalStateException("modelEditorFactory must not be null.");
 		return modelEditorFactory;
 	}
 
 	private IDiagramEditorFactory getDiagramEditorFactory() {
-		ProjectAccessor projectAccessor = getProjectAccessor();
-		IDiagramEditorFactory diagramEditorFactory = projectAccessor.getDiagramEditorFactory();
+		IDiagramEditorFactory diagramEditorFactory = getProjectAccessor().getDiagramEditorFactory();
 		if(diagramEditorFactory == null) throw new IllegalStateException("diagramEditorFactory must not be null.");
 		return diagramEditorFactory;
 	}
