@@ -45,9 +45,9 @@ public class AutoUpdater {
 				Plugin plugin = updateXml.getPlugin();
 				UpdateCheck updateCheck = plugin.getUpdatecCheck();
 				if (versionCompareTo(updateCheck.getVersion(), getCurrentVersion()) > 0) {
-	        		String message = "<html><span style='font-size: 10px;font-family: Arial, Helvetica;'>astahプラグイン更新通知</font><br>" +
+	        		String message = "<html><span style='font-size: 10px;font-family: Arial, Helvetica;'>astah plugin notification</font><br>" +
 	        				"<hr>" +
-	        				"<span style='font-size: 9px;font-family: Arial, Helvetica;'>FreeMind Import for Astahの新しいバージョンがダウンロードできます。<br>" +
+	        				"<span style='font-size: 9px;font-family: Arial, Helvetica;'>The new version has been released. [" + plugin.getId() + "]<br>" +
 	        				"<a href=\"" + updateCheck.getCodeBase() + "\">" + updateCheck.getCodeBase() + "</a>" +
 	        				"</span></html>";
 	        		
