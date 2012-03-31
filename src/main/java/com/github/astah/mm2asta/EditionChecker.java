@@ -18,6 +18,7 @@ public class EditionChecker {
 	static {
 		targetEditon.add("professional");
 		targetEditon.add("uml");
+		targetEditon.add("think");
 	}
 
 	private static final Logger logger = LoggerFactory.getLogger(EditionChecker.class);
