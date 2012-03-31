@@ -21,7 +21,6 @@ import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.WindowConstants;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
@@ -43,32 +42,7 @@ public class NotificationPopup extends JFrame {
 	enum Position {
 		TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT;
 	}
-	
-	public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (Exception e) {
-        	e.printStackTrace();
-        }
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-        		String message = "<html>Backlog Connector for Astahの新しいバージョンがダウンロードできます。";
-        		
-        		NotificationPopup notifier = new NotificationPopup(message);		
-        		notifier.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        		notifier.setTimeout(5000);
-        		notifier.setPosition(Position.BOTTOM_RIGHT);
-        		notifier.setVisible(true);
-            }
-        });
-	}
-	
+
 	public NotificationPopup(String message) {
 		this.message = message;
 		initComponents();

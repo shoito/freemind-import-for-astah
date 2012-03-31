@@ -41,7 +41,6 @@ public class Activator implements BundleActivator {
 		tracker.open();
 		
 		try {
-			handler = new AstahAPIHandler();
 			File userIconXmlFile = new File(System.getProperty("user.home")
 					+ File.separator + ".astah" + File.separator + handler.getAstahEdition(), MmUserIcon.FILE_NAME);
 			initializeUserIcon(userIconXmlFile);
