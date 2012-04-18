@@ -19,6 +19,7 @@ import ch.qos.logback.classic.Logger;
 
 import com.change_vision.jude.api.inf.ui.IMessageDialogHandlerFactory;
 import com.github.astah.mm2asta.updater.AutoUpdater;
+import com.github.astah.mm2asta.usericon.MMUserIconFile;
 import com.github.astah.mm2asta.usericon.MmUserIcon;
 import com.github.astah.mm2asta.util.ConfigurationUtils;
 
@@ -42,10 +43,10 @@ public class Activator implements BundleActivator {
 		
 		try {
 			File userIconXmlFile = new File(System.getProperty("user.home")
-					+ File.separator + ".astah" + File.separator + handler.getAstahEdition(), MmUserIcon.FILE_NAME);
+					+ File.separator + ".astah" + File.separator + handler.getAstahEdition(), MMUserIconFile.current().getFileName());
 			initializeUserIcon(userIconXmlFile);
 		} catch (Exception e) {
-			logger.error("Initialization error: " + MmUserIcon.FILE_NAME);
+			logger.error("Initialization error: " + MMUserIconFile.current().getFileName());
 			return;
 		}
 		
@@ -68,7 +69,7 @@ public class Activator implements BundleActivator {
 	}
 	
 	private void initializeUserIcon(File userIconXmlFile) throws IOException, FileNotFoundException {
-		InputStream inputStreamForPlugin = MmUserIcon.class.getResourceAsStream(MmUserIcon.FILE_NAME);
+		InputStream inputStreamForPlugin = MmUserIcon.class.getResourceAsStream(MMUserIconFile.PRO_AND_UML.getFileName());
 		MmUserIcon mmUserIconForPlugin = MmUserIcon.unmarshall(inputStreamForPlugin);
 		MmUserIcon mmUserIcon = (userIconXmlFile.canRead()) ? 
 				MmUserIcon.unmarshall(new FileInputStream(userIconXmlFile))	: new MmUserIcon();

@@ -17,7 +17,7 @@ public class EditionChecker {
 
 	static {
 		targetEditon.add("professional");
-		targetEditon.add("uml");
+		targetEditon.add("UML");
 		targetEditon.add("think");
 	}
 

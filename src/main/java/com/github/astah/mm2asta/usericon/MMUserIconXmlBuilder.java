@@ -36,7 +36,7 @@ public class MMUserIconXmlBuilder {
 	 */
 	public boolean isCompletely(InputStream isForUserIconXml) {
 		try {
-			InputStream inputStreamToFind = UserIcon.class.getResourceAsStream("JudeMMUserIconP.xml");
+			InputStream inputStreamToFind = MmUserIcon.class.getResourceAsStream(MMUserIconFile.PRO_AND_UML.getFileName());
 			MmUserIcon valueToFind = MmUserIcon.unmarshall(inputStreamToFind);
 			MmUserIcon mmUserIcon = MmUserIcon.unmarshall(isForUserIconXml);
 			return mmUserIcon.containsAll(valueToFind);

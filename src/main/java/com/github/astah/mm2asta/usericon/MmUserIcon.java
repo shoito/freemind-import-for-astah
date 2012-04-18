@@ -17,8 +17,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="mmUserIcon")
 public class MmUserIcon {
-	public static final String FILE_NAME = "JudeMMUserIconP.xml";
-	
 	@XmlElement(name="mmUserIconInfo")
 	private List<MmUserIconInfo> mmUserIconInfos;
 
