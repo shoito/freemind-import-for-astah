@@ -13,9 +13,8 @@ import javax.xml.bind.JAXB;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.util.tracker.ServiceTracker;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import ch.qos.logback.classic.Logger;
 
 import com.change_vision.jude.api.inf.ui.IMessageDialogHandlerFactory;
 import com.github.astah.mm2asta.updater.AutoUpdater;
@@ -24,7 +23,7 @@ import com.github.astah.mm2asta.usericon.MmUserIcon;
 import com.github.astah.mm2asta.util.ConfigurationUtils;
 
 public class Activator implements BundleActivator {
-	private static final Logger logger = (Logger) LoggerFactory.getLogger(Activator.class);
+	private static final Logger logger = LoggerFactory.getLogger(Activator.class);
 	private static Activator activator;
 	private AstahAPIHandler handler = new AstahAPIHandler();
 	

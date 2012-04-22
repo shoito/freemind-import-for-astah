@@ -15,10 +15,9 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
-
-import ch.qos.logback.classic.Logger;
 
 import com.change_vision.jude.api.inf.editor.MindmapEditor;
 import com.change_vision.jude.api.inf.editor.TransactionManager;
@@ -29,13 +28,15 @@ import com.change_vision.jude.api.inf.presentation.INodePresentation;
 import com.change_vision.jude.api.inf.project.ProjectAccessor;
 import com.change_vision.jude.api.inf.project.ProjectAccessorFactory;
 import com.github.astah.mm2asta.model.Cloud;
+import com.github.astah.mm2asta.model.Html;
 import com.github.astah.mm2asta.model.Icon;
 import com.github.astah.mm2asta.model.Map;
 import com.github.astah.mm2asta.model.Node;
+import com.github.astah.mm2asta.model.Richcontent;
 import com.github.astah.mm2asta.usericon.UserIcon;
 
 public class MmWalker {
-	private static final Logger logger = (Logger) LoggerFactory.getLogger(MmWalker.class);
+	private static final Logger logger = LoggerFactory.getLogger(MmWalker.class);
 	private static final String ICONS_PROPERTY = "icons";
 	
 	ProjectAccessor projectAccessor;
@@ -102,10 +103,15 @@ public class MmWalker {
 		INodePresentation topic = null;
 		String text = node.getTEXT();
 		
-		StringBuilder lineText = new StringBuilder();
-		if (text != null) {
-			lineText.append(text);
-			lineText.append("¥t");
+		if (text == null) { // Rich Long Node
+			List<Object> arrowlinkOrCloudOrEdge = node.getArrowlinkOrCloudOrEdge();
+			for (Object obj : arrowlinkOrCloudOrEdge) {
+				if (obj instanceof Richcontent && ((Richcontent) obj).getTYPE().equalsIgnoreCase("node")) {
+					Html html = ((Richcontent) obj).getHtml();
+					text = html.getBodyText();
+					break;
+				}
+			}
 		}
 		
 		String topicText = StringUtils.defaultIfBlank(text, "_");
@@ -116,7 +122,6 @@ public class MmWalker {
 		
 		currentPosition = node.getPOSITION();
 		
-		lineText.append(currentPosition);
 		if (currentPosition != null && currentPosition.equals("left")) {
 			topic = mindmapEditor.createTopic(parent, topicText, "left");
 		} else {
