@@ -8,6 +8,8 @@ astah UML, professionalの何れかにインストールして利用します。
 ---
 `astahのインストールフォルダ/plugins/` に **mm2asta-x.x.x.jar** ファイルをコピーしてastahを再起動します。
 
+ファイルは[こちら](https://github.com/shoito/freemind-import-for-astah/downloads)からダウンロードしてください。
+
 ### astahバージョン6.5.1以上のインストール
 この辺から各OS用のインストーラーをダウンロードして、実行します。
 
