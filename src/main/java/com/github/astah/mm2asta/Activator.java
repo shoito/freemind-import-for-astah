@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 import javax.xml.bind.JAXB;
 
@@ -79,7 +81,7 @@ public class Activator implements BundleActivator {
 	}
 	
 	private void runAutoUpdater() {
-		new Runnable() {
+		Runnable task = new Runnable() {
 			@Override
 			public void run() {
 				try {
@@ -96,5 +98,7 @@ public class Activator implements BundleActivator {
 				}
 			}
 		};
+		Executor executor = Executors.newSingleThreadExecutor();
+		executor.execute(task);
 	}
 }

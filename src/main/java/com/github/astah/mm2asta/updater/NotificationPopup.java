@@ -101,11 +101,11 @@ public class NotificationPopup extends JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(278, 278, 278)
+                .addGap(498, 498, 498)
                 .addComponent(closeButton, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(messageText, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE))
+                .addComponent(messageText, GroupLayout.PREFERRED_SIZE, 518, GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(Alignment.LEADING)
@@ -117,7 +117,7 @@ public class NotificationPopup extends JFrame {
                 .addComponent(messageText, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
         );
 		
-		setSize(300, 110);
+		setSize(520, 110);
 		setPosition(Position.BOTTOM_RIGHT);
 		setOpacity(opacity);
 		setAlwaysOnTop(true);
