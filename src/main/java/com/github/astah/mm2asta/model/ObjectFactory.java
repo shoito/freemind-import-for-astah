@@ -1,9 +1,6 @@
 package com.github.astah.mm2asta.model;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -23,13 +20,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Text_QNAME = new QName("", "text");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.github.astah.mm2asta.model
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link Arrowlink }
+     * 
+     */
+    public Arrowlink createArrowlink() {
+        return new Arrowlink();
     }
 
     /**
@@ -49,19 +53,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Map }
+     * Create an instance of {@link Text }
      * 
      */
-    public Map createMap() {
-        return new Map();
-    }
-
-    /**
-     * Create an instance of {@link Arrowlink }
-     * 
-     */
-    public Arrowlink createArrowlink() {
-        return new Arrowlink();
+    public Text createText() {
+        return new Text();
     }
 
     /**
@@ -73,43 +69,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Richcontent }
-     * 
-     */
-    public Richcontent createRichcontent() {
-        return new Richcontent();
-    }
-
-    /**
      * Create an instance of {@link Edge }
      * 
      */
     public Edge createEdge() {
         return new Edge();
-    }
-
-    /**
-     * Create an instance of {@link Cloud }
-     * 
-     */
-    public Cloud createCloud() {
-        return new Cloud();
-    }
-
-    /**
-     * Create an instance of {@link Html }
-     * 
-     */
-    public Html createHtml() {
-        return new Html();
-    }
-
-    /**
-     * Create an instance of {@link Node }
-     * 
-     */
-    public Node createNode() {
-        return new Node();
     }
 
     /**
@@ -121,12 +85,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link Linktarget }
      * 
      */
-    @XmlElementDecl(namespace = "", name = "text")
-    public JAXBElement<String> createText(String value) {
-        return new JAXBElement<String>(_Text_QNAME, String.class, null, value);
+    public Linktarget createLinktarget() {
+        return new Linktarget();
+    }
+
+    /**
+     * Create an instance of {@link Attribute }
+     * 
+     */
+    public Attribute createAttribute() {
+        return new Attribute();
+    }
+
+    /**
+     * Create an instance of {@link AttributeLayout }
+     * 
+     */
+    public AttributeLayout createAttributeLayout() {
+        return new AttributeLayout();
+    }
+
+    /**
+     * Create an instance of {@link Node }
+     * 
+     */
+    public Node createNode() {
+        return new Node();
+    }
+
+    /**
+     * Create an instance of {@link Cloud }
+     * 
+     */
+    public Cloud createCloud() {
+        return new Cloud();
+    }
+
+    /**
+     * Create an instance of {@link Richcontent }
+     * 
+     */
+    public Richcontent createRichcontent() {
+        return new Richcontent();
+    }
+
+    /**
+     * Create an instance of {@link Html }
+     * 
+     */
+    public Html createHtml() {
+        return new Html();
+    }
+
+    /**
+     * Create an instance of {@link Map }
+     * 
+     */
+    public Map createMap() {
+        return new Map();
     }
 
 }

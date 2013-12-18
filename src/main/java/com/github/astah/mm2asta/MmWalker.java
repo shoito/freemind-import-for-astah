@@ -82,7 +82,7 @@ public class MmWalker {
 	private void scan(INodePresentation parent, Node node) throws Throwable {
 		INodePresentation topic = scanNode(parent, node);	
 		
-		List<Object> arrowlinkOrCloudOrEdge = node.getArrowlinkOrCloudOrEdge();
+		List<Object> arrowlinkOrCloudOrEdge = node.getArrowlinkOrAttributeOrAttributeLayout();
 		for (Object element : arrowlinkOrCloudOrEdge) {
 			if (element instanceof Node) {
 				scan(topic, (Node) element);
@@ -104,7 +104,7 @@ public class MmWalker {
 		String text = node.getTEXT();
 		
 		if (text == null) { // Rich Long Node
-			List<Object> arrowlinkOrCloudOrEdge = node.getArrowlinkOrCloudOrEdge();
+			List<Object> arrowlinkOrCloudOrEdge = node.getArrowlinkOrAttributeOrAttributeLayout();
 			for (Object obj : arrowlinkOrCloudOrEdge) {
 				if (obj instanceof Richcontent && ((Richcontent) obj).getTYPE().equalsIgnoreCase("node")) {
 					Html html = ((Richcontent) obj).getHtml();

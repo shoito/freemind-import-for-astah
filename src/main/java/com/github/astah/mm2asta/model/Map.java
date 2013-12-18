@@ -37,7 +37,7 @@ public class Map {
 
     @XmlElement(required = true)
     protected Node node;
-    @XmlAttribute(required = true)
+    @XmlAttribute(name = "version", required = true)
     protected String version;
 
     /**

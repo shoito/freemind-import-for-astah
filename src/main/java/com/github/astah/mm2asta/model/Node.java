@@ -27,6 +27,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;choice maxOccurs="unbounded" minOccurs="0">
  *         &lt;element ref="{}arrowlink"/>
+ *         &lt;element ref="{}attribute"/>
+ *         &lt;element ref="{}attribute_layout"/>
+ *         &lt;element ref="{}linktarget"/>
  *         &lt;element ref="{}cloud"/>
  *         &lt;element ref="{}edge"/>
  *         &lt;element ref="{}font"/>
@@ -72,22 +75,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "arrowlinkOrCloudOrEdge"
+    "arrowlinkOrAttributeOrAttributeLayout"
 })
 @XmlRootElement(name = "node")
 public class Node {
 
     @XmlElements({
+        @XmlElement(name = "arrowlink", type = Arrowlink.class),
+        @XmlElement(name = "attribute", type = Attribute.class),
+        @XmlElement(name = "attribute_layout", type = AttributeLayout.class),
+        @XmlElement(name = "linktarget", type = Linktarget.class),
+        @XmlElement(name = "cloud", type = Cloud.class),
         @XmlElement(name = "edge", type = Edge.class),
-        @XmlElement(name = "richcontent", type = Richcontent.class),
         @XmlElement(name = "font", type = Font.class),
         @XmlElement(name = "hook", type = Hook.class),
         @XmlElement(name = "icon", type = Icon.class),
-        @XmlElement(name = "cloud", type = Cloud.class),
-        @XmlElement(name = "arrowlink", type = Arrowlink.class),
-        @XmlElement(name = "node", type = Node.class)
+        @XmlElement(name = "node", type = Node.class),
+        @XmlElement(name = "richcontent", type = Richcontent.class)
     })
-    protected List<Object> arrowlinkOrCloudOrEdge;
+    protected List<Object> arrowlinkOrAttributeOrAttributeLayout;
     @XmlAttribute(name = "BACKGROUND_COLOR")
     protected String backgroundcolor;
     @XmlAttribute(name = "COLOR")
@@ -121,39 +127,42 @@ public class Node {
     protected String encryptedcontent;
 
     /**
-     * Gets the value of the arrowlinkOrCloudOrEdge property.
+     * Gets the value of the arrowlinkOrAttributeOrAttributeLayout property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the arrowlinkOrCloudOrEdge property.
+     * This is why there is not a <CODE>set</CODE> method for the arrowlinkOrAttributeOrAttributeLayout property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getArrowlinkOrCloudOrEdge().add(newItem);
+     *    getArrowlinkOrAttributeOrAttributeLayout().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link Arrowlink }
+     * {@link Attribute }
+     * {@link AttributeLayout }
+     * {@link Linktarget }
+     * {@link Cloud }
      * {@link Edge }
-     * {@link Richcontent }
      * {@link Font }
      * {@link Hook }
      * {@link Icon }
-     * {@link Cloud }
-     * {@link Arrowlink }
      * {@link Node }
+     * {@link Richcontent }
      * 
      * 
      */
-    public List<Object> getArrowlinkOrCloudOrEdge() {
-        if (arrowlinkOrCloudOrEdge == null) {
-            arrowlinkOrCloudOrEdge = new ArrayList<Object>();
+    public List<Object> getArrowlinkOrAttributeOrAttributeLayout() {
+        if (arrowlinkOrAttributeOrAttributeLayout == null) {
+            arrowlinkOrAttributeOrAttributeLayout = new ArrayList<Object>();
         }
-        return this.arrowlinkOrCloudOrEdge;
+        return this.arrowlinkOrAttributeOrAttributeLayout;
     }
 
     /**
