@@ -6,7 +6,7 @@ astah UML, professionalの何れかにインストールして利用します。
 
 インストール
 ---
-[こちらのページ](https://github.com/shoito/freemind-import-for-astah/tree/master/target)から **[mm2asta-x.x.x.jar](https://github.com/shoito/freemind-import-for-astah/blob/master/target/mm2asta-0.2.3.jar?raw=true)** ファイルをダウンロードし、
+[こちらのページ](https://github.com/shoito/freemind-import-for-astah/tree/master/target)から **[mm2asta-x.x.x.jar](https://github.com/shoito/freemind-import-for-astah/blob/master/target/mm2asta-0.3.0.jar?raw=true)** ファイルをダウンロードし、
 `astahのインストールフォルダ/plugins/` に **mm2asta-x.x.x.jar** ファイルをコピーしてastahを再起動します。
 
 ファイルは[こちら](https://github.com/shoito/freemind-import-for-astah/downloads)からダウンロードしてください。

@@ -2,7 +2,7 @@
 <update xmlns="http://plugin.astah.net/update/response" protocol="1.0">
 	<plugin id="com.github.astah.mm2asta">
 		<updatecheck 
-			codebase="https://raw.github.com/shoito/freemind-import-for-astah/master/target/mm2asta-0.2.3.jar"
-			version="0.2.3" />
+			codebase="https://raw.github.com/shoito/freemind-import-for-astah/master/target/mm2asta-0.3.0.jar"
+			version="0.3.0" />
 	</plugin>
 </update>
