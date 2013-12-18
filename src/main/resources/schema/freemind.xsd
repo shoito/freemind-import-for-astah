@@ -3,17 +3,41 @@
 
  <xs:element name='Parameters'>
   <xs:complexType>
-	  <!--Is the time management plugin.-->
    <xs:attribute name='REMINDUSERAT' type='xs:integer' use='optional'/>
+   <xs:attribute name='ORIGINAL_ID' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_MAP_LAT' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_MAP_LON' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_MAP_TOOLTIP_LOCATION' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_POS_LAT' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_POS_LON' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_TILE_SOURCE' type='xs:string' use='optional'/>
+   <xs:attribute name='XML_STORAGE_ZOOM' type='xs:string' use='optional'/>
+   <xs:attribute name='CLONE_ID' type='xs:string' use='optional'/>
+   <xs:attribute name='CLONE_IDS' type='xs:string' use='optional'/>
+   <xs:attribute name='CLONE_ITSELF' type='xs:string' use='optional'/>
   </xs:complexType>
  </xs:element>
  <!--Used for node notes.-->
- <xs:element name='text' type="xs:string">
+ <xs:element name='text'>
+  <xs:complexType/>
  </xs:element>
 
  <xs:element name='arrowlink'>
   <xs:complexType>
    <xs:attribute name='COLOR' type='xs:string' use='optional'/>
+   <xs:attribute name='DESTINATION' type='xs:string' use='required'/>
+   <xs:attribute name='ENDARROW' type='xs:string' use='optional'/>
+   <xs:attribute name='ENDINCLINATION' type='xs:string' use='optional'/>
+   <xs:attribute name='ID' type='xs:string' use='optional'/>
+   <xs:attribute name='STARTARROW' type='xs:string' use='optional'/>
+   <xs:attribute name='STARTINCLINATION' type='xs:string' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='linktarget'>
+  <xs:complexType>
+   <xs:attribute name='COLOR' type='xs:string' use='optional'/>
+   <xs:attribute name='SOURCE' type='xs:string' use='required'/>
    <xs:attribute name='DESTINATION' type='xs:string' use='required'/>
    <xs:attribute name='ENDARROW' type='xs:string' use='optional'/>
    <xs:attribute name='ENDINCLINATION' type='xs:string' use='optional'/>
@@ -75,6 +99,20 @@
   </xs:complexType>
  </xs:element>
 
+ <xs:element name='attribute'>
+  <xs:complexType>
+   <xs:attribute name='NAME' type='xs:string' use='required'/>
+   <xs:attribute name='VALUE' type='xs:string' use='required'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='attribute_layout'>
+  <xs:complexType>
+   <xs:attribute name='NAME_WIDTH' type='xs:integer' use='required'/>
+   <xs:attribute name='VALUE_WIDTH' type='xs:integer' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
  <xs:element name='html'>
   <xs:complexType>
    <xs:sequence>
@@ -115,6 +153,9 @@
   <xs:complexType>
    <xs:choice minOccurs='0' maxOccurs='unbounded'>
     <xs:element ref='arrowlink'/>
+    <xs:element ref='attribute'/>
+    <xs:element ref='attribute_layout'/>
+    <xs:element ref='linktarget'/>
     <xs:element ref='cloud'/>
     <xs:element ref='edge'/>
     <xs:element ref='font'/>

@@ -39,7 +39,7 @@ public class Hook {
 
     @XmlElement(name = "Parameters")
     protected Parameters parameters;
-    protected String text;
+    protected Text text;
     @XmlAttribute(name = "NAME", required = true)
     protected String name;
 
@@ -72,10 +72,10 @@ public class Hook {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Text }
      *     
      */
-    public String getText() {
+    public Text getText() {
         return text;
     }
 
@@ -84,10 +84,10 @@ public class Hook {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Text }
      *     
      */
-    public void setText(String value) {
+    public void setText(Text value) {
         this.text = value;
     }
 
